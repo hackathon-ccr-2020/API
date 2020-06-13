@@ -15,11 +15,11 @@ module.exports = {
 			},
 			name: {
 				allowNull: false,
-				type: DataTypes.STRING(100),
+				type: Sequelize.STRING,
 			},
 			days: {
 				allowNull: false,
-				type: DataTypes.ARRAY(10),
+				type: Sequelize.STRING,
 			}
 		});
 	},

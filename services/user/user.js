@@ -1,5 +1,6 @@
 var {User} = require('../../models');
 const bcrypt = require("bcrypt");
+const userNotFound = {mensagem: 'Usuário não encontrado'};
 
 module.exports = {
     async getUserById(user_id) {
@@ -24,18 +25,17 @@ module.exports = {
         return user
     },
     async loginUser(payload) {
-        const pass = await bcrypt.hash(payload.password, 10);
-
-        console.log(pass);
-        
-
         const user = await User.findOne({
             where: {
-                cellphone: payload.cellphone,
-                password: pass
+                cellphone: payload.cellphone
             }
         })
-        return user
+
+        const comparePass = await bcrypt.compare(payload.password,user.password);
+
+        if (comparePass)
+            return user;
+        else return userNotFound;
     }
 }
 

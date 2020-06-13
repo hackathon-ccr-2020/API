@@ -18,6 +18,7 @@ app.get("/", async (req, res) => {
 require("./routes/channel.routes")(app);
 require("./routes/medicines.routes")(app);
 require("./routes/benefits.routes")(app);
+require("./routes/customer.routes")(app);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

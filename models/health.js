@@ -42,8 +42,12 @@ module.exports = (sequelize, DataTypes) => {
          type: DataTypes.INTEGER
       },
       diseases: {
-         allowNull: false,
+         allowNull: true,
          type: DataTypes.INTEGER
+      },
+      userId: {
+        allowNull: false,
+        type: DataTypes.INTEGER
       }
    }, {timestamps: false, tableName: "health"});
 

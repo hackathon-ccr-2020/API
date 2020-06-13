@@ -7,6 +7,21 @@ module.exports = {
         })
 
         return user
+    },
+
+    async create(data) {
+        const user = User.build({
+            firstName: data.firstName,
+            lastName: data.lastName,
+            cellphone: data.cellphone,
+            birthDate: data.birthDate,
+            points: data.points,
+            password: data.password
+        })
+
+        await user.save()
+
+        return user
     }
 }
 

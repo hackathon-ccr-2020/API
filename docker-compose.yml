@@ -8,6 +8,21 @@ services:
       - .:/usr/src/app
     tty: true
     stdin_open: true
+    depends_on:
+      - mysql
     ports:
       - 3000:3000
     command: node server.js
+
+  mysql:
+    image: mysql:8.0.20
+    container_name: ccr_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=ccr2020
+      - MYSQL_DATABASE=hackathon_ccr
+      - MYSQL_USER=ccr
+      - MYSQL_PASSWORD=ccr2020
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"

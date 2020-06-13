@@ -15,8 +15,9 @@ app.get("/", async (req, res) => {
   res.json({ message: "Iae man." });
 });
 
+require("./routes/customer.routes.js")(app);
 require("./routes/channel.routes.js")(app);
-require("./routes/medicines.routes")(app);
+require("./routes/medicines.routes.js")(app);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

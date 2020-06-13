@@ -5,5 +5,5 @@ module.exports = app => {
 
   app.post("/user", userController.createUser);
   app.get("/user/:user_id/home", homeController.getUserHome);
-  app.get("/user/:user_id/home", homeController.getUserHome);
+  app.post("/user/login", userController.loginUser);
 };

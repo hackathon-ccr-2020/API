@@ -7,30 +7,35 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
       },
       firstName: {
         allowNull: false,
-        type: DataTypes.STRING(100),
+        type: Sequelize.STRING(100),
       },
       lastName: {
         allowNull: false,
-        type: DataTypes.STRING(100),
+        type: Sequelize.STRING(100),
       },
       cellphone: {
         allowNull: false,
-        type: DataTypes.STRING(11),
+        type: Sequelize.STRING(11),
       },
       birthDate: {
         allowNull: false,
-        type: DataTypes.DATE
+        type: Sequelize.DATE
+      },
+      points: {
+        allowNull: true,
+        type: Sequelize.INTEGER
       },
       password: {
         allowNull: false,
-        type: DataTypes.STRING(45)
+        type: Sequelize.STRING(45)
       }
-    }
+    })
   },
+  
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('users');
   }

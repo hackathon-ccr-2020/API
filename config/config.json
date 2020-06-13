@@ -1,9 +1,10 @@
 {
-  "development": {
-    "username": "ccr",
-    "password": "ccr2020",
-    "database": "hackathon_ccr",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-  }
+   "development": {
+      "username": "tfoortuxhyzlrs",
+      "password": "5f5341dc9135e77bcf9e992e467ab2966d85db98148cb768eacf470e92a40a80",
+      "database": "d4vmp8eeh14tfl",
+      "host": "ec2-52-44-55-63.compute-1.amazonaws.com",
+      "port": "5432",
+      "dialect": "postgres"
+   }
 }

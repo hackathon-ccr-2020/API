@@ -11,11 +11,11 @@ module.exports = {
       },
       firstFriend: {
         allowNull: false,
-        type: Sequelize.STRING(100),
+        type: Sequelize.INTEGER,
       },
-      lastFriend: {
+      secondaryFriend: {
         allowNull: false,
-        type: Sequelize.STRING(100),
+        type: Sequelize.INTEGER,
       }
     })
   },

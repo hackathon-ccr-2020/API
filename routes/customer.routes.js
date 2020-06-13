@@ -6,5 +6,6 @@ module.exports = app => {
 
   app.post("/user", userController.createUser);
   app.get("/user/:user_id/home", homeController.getUserHome);
+  app.get("/user/:user_id/channels", channelController.getUserChannels);
   app.post("/user/:user_id/health", healthController.createUserHealth);
 };

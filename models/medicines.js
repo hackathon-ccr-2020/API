@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
     const Medicines = sequelize.define('Medicines', {
         id: {
@@ -17,7 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         days: {
             allowNull: false,
             type: DataTypes.STRING(10),
-       }
+        },
+        points: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+        },
     }, {timestamps: false, tableName: "medicines"});
 
     return Medicines;

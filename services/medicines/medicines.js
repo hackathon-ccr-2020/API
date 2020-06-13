@@ -1,8 +1,11 @@
-const { Medicines, MedicinesHours } = require('../../models');
+const { Medicines, MedicinesHours, MedicineHoursStatus } = require('../../models');
 
 // relations
 Medicines.hasMany(MedicinesHours, { foreignKey: 'medicinesId' });
 MedicinesHours.belongsTo(Medicines, { foreignKey: 'id' });
+
+Medicines.hasMany(MedicineHoursStatus, { foreignKey: 'medicineId' });
+MedicineHoursStatus.belongsTo(Medicines, { foreignKey: 'id' });
 
 module.exports = {
     async find(userId) {
@@ -44,7 +47,8 @@ module.exports = {
             const medicine = await Medicines.build({
                 userId: payload.userId,
                 name: payload.name,
-                days: payload.days
+                days: payload.days,
+                points: 5
             }).save();
 
             for (let index = 0; index < payload.horarios.length; index++) {
@@ -60,5 +64,32 @@ module.exports = {
         } catch (error) {
             throw error;
         }        
+    },
+    async createHistoric(payload) {
+        try {
+            const medicine = await MedicineHoursStatus.build(payload).save();
+            return medicine;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }        
+    },
+    async findAllHistoric(userId) {
+        try {
+            return await Medicines.findAll({
+                where: {
+                    userId: userId,
+                },
+                include: [
+                    {
+                        model: MedicineHoursStatus,
+
+                    }
+                ]
+            })
+        } catch (error) {
+            
+            throw error;
+        }
     }
 }

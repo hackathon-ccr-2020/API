@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
          allowNull: false,
          type: DataTypes.STRING
       }
-   }, {timestamps: false});
+   }, {timestamps: false, tableName: "users"});
 
    return User;
 }

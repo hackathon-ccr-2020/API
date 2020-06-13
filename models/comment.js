@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER,
        }
-    }, {timestamps: false});
+    }, {timestamps: false, tableName: "comments"});
 
     Comment.associate = function (models) {
         Comment.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'})

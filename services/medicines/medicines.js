@@ -51,8 +51,8 @@ module.exports = {
                 points: 5
             }).save();
 
-            for (let index = 0; index < payload.horarios.length; index++) {
-                const element = payload.horarios[index];
+            for (let index = 0; index < payload.hours.length; index++) {
+                const element = payload.hours[index];
                 await MedicinesHours.build({
                     medicinesId: medicine.id,
                     userId: medicine.userId,

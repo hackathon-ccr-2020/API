@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
         user_id: {
             allowNull: false,
             type: DataTypes.INTEGER,
-        }
-    });
+       }
+    }, {timestamps: false});
 
     Comment.associate = function (models) {
         Comment.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'})

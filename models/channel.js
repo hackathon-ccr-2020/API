@@ -1,7 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Channel = sequelize.define('Channel', {
         id: {
-            allowNull: false,
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -9,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         name: {
             allowNull: false,
             type: DataTypes.STRING,
-        }
-    });
+       }
+    }, { timestamps: false, tableName: "channels" });
 
     return Channel;
 }

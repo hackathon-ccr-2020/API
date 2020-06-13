@@ -3,14 +3,15 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const Friend = require('./models');
+const { Channel } = require('./models');
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  console.log(Friend)
+app.get("/", async (req, res) => {
+   const channel = await Channel.create({"name": "sequelize"});
+   console.log(channel)
   res.json({ message: "Iae man." });
 });
 

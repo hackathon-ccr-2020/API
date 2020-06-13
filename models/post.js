@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
         user_id: {
             allowNull: false,
             type: DataTypes.INTEGER,
-        }
-    });
+       }
+    },{timestamps: false});
 
     Post.associate = function (models) {
         Post.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'})

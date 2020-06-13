@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
         status: {
             allowNull: false,
             type: DataTypes.INTEGER,
-        }
-    });
+       } 
+    }, {timestamps: false});
 
     return MedicineHoursStatus;
  }

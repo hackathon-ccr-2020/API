@@ -1,4 +1,6 @@
 var {User} = require('../../models');
+const bcrypt = require("bcrypt");
+const userNotFound = {mensagem: 'Usuário não encontrado'};
 
 module.exports = {
     async getUserById(user_id) {
@@ -8,7 +10,6 @@ module.exports = {
 
         return user
     },
-
     async create(data) {
         const user = User.build({
             firstName: data.firstName,
@@ -22,6 +23,19 @@ module.exports = {
         await user.save()
 
         return user
+    },
+    async loginUser(payload) {
+        const user = await User.findOne({
+            where: {
+                cellphone: payload.cellphone
+            }
+        })
+
+        const comparePass = await bcrypt.compare(payload.password,user.password);
+
+        if (comparePass)
+            return user;
+        else return userNotFound;
     }
 }
 

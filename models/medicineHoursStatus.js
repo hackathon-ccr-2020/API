@@ -4,19 +4,19 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         },
         medicinesHoursId: {
             allowNull: false,
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         },
         hours: {
             allowNull: false,
-            type: Sequelize.DATETIME,
+            type: DataTypes.STRING,
         },
         status: {
             allowNull: false,
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         }
     });
 

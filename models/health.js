@@ -1,9 +1,7 @@
-import * as bcrypt from 'bcrypt';
-
 module.exports = (sequelize, DataTypes) => {
    const Health = sequelize.define('Health', {
       id: {
-         type: DataTypes.Integer,
+         type: DataTypes.INTEGER,
          primaryKey: true,
          autoIncrement: true
       },
@@ -17,35 +15,35 @@ module.exports = (sequelize, DataTypes) => {
       },
       continousMedication: {
          allowNull: false,
-         type: DataTypes.Integer,
+         type: DataTypes.INTEGER,
       },
       medicalMonitoring: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       },
       psychologicalMonitoring: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       },
       physicalExercises: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       },
       sleep: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       },
       sight: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       },
       mentalHealth: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       },
       diseases: {
          allowNull: false,
-         type: DataTypes.Integer
+         type: DataTypes.INTEGER
       }
    });
 

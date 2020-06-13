@@ -1,17 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
    const Friend = sequelize.define('Friend', {
       id: {
-         type: DataTypes.Integer,
+         type: DataTypes.INTEGER,
          primaryKey: true,
          autoIncrement: true
       },
       firstFriend: {
          allowNull: false,
-         type: DataTypes.Integer,
+         type: DataTypes.INTEGER,
       },
       secondaryFriend: {
          allowNull: false,
-         type: DataTypes.Integer,
+         type: DataTypes.INTEGER,
       }
    });
 

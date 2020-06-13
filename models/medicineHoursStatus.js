@@ -1,22 +1,22 @@
-export default function (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     const MedicineHoursStatus = sequelize.define('MedicineHoursStatus', {
         id: {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         },
         medicinesHoursId: {
             allowNull: false,
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         },
         hours: {
             allowNull: false,
-            type: Sequelize.DATETIME,
+            type: DataTypes.STRING,
         },
         status: {
             allowNull: false,
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         }
     });
 

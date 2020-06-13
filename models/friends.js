@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
          allowNull: false,
          type: DataTypes.INTEGER,
       }
-   }, {timestamps: false, tableName: "friends"});
+    }, {timestamps: false, tableName: "friends"});
 
-   return Friend;
+    return Friend;
 }

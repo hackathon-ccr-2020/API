@@ -1,4 +1,4 @@
-export default function (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     const MedicineHoursStatus = sequelize.define('MedicineHoursStatus', {
         id: {
             allowNull: false,

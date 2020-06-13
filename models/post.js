@@ -13,11 +13,19 @@ module.exports = (sequelize, DataTypes) => {
         user_id: {
             allowNull: false,
             type: DataTypes.INTEGER,
+       },
+       channel_id: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+       },
+       points: {
+            allowNull: true,
+            type: DataTypes.INTEGER
        }
     },{timestamps: false, tableName: "posts"});
 
     Post.associate = function (models) {
-        Post.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'})
+        Post.belongsTo(models.Channel, { as: 'Channel', foreignKey: 'channel_id'})
     }
 
     return Post;

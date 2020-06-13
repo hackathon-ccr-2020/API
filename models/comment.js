@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
     const Comment = sequelize.define('Comment', {
         id: {
             allowNull: false,

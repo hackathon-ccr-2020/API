@@ -16,9 +16,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         days: {
             allowNull: false,
-            type: DataTypes.ARRAY(10),
+            type: DataTypes.STRING(10),
        }
     }, {timestamps: false, tableName: "medicines"});
 
     return Medicines;
- }
+}

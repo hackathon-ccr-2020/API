@@ -1,7 +1,7 @@
-module.exports = (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
    const Disease = sequelize.define('Disease', {
       id: {
-         type: DataTypes.Integer,
+         type: DataTypes.INTEGER,
          primaryKey: true,
          autoIncrement: true
       },

@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
     const Channel = sequelize.define('Channel', {
         id: {
             allowNull: false,

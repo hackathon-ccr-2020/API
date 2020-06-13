@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.DATE
         },
+        points: {
+            allowNull: true,
+            type: DataTypes.INTEGER
+        },
         password: {
             allowNull: false,
             type: DataTypes.STRING
@@ -29,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 
     User.associate = function (models) {
         User.belongsToMany(models.Channel, { as: 'Channels', through: { model: models.ChannelUser }, foreignKey: 'user_id'})
+        User.hasMany(models.Friend, { as: 'Friends', foreignKey: 'firstFriend'})
     }
 
    return User;

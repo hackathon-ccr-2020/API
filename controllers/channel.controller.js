@@ -1,25 +1,39 @@
-const service = require("../services/channels/channels.js");
+const {Channel, Post} = require("../models");
 
 exports.getUserChannels = async (req, res) => {
-    channels = await service.getUserChannels(req.params.user_id)
+  channels = [
+    Channel.build({
+        id: 1,
+        name: "#Depressao"
+    }),
+    Channel.build({
+        id: 2,
+        name: "#PressaoAlta"
+    }),
+    Channel.build({
+        id: 3,
+        name: "#Postura"
+    })
+  ]
 
-    data = {
-        data: {
-            channels: channels
-        }
-    }
-
-    res.send(data);
+  res.send(channels);
 };
 
 exports.getChannelContent = async (req, res) => {
-    content = await service.getChannelContent(req.params.channel_id)
-
-    data = {
-        data: {
-            posts: content
-        }
+    content = {
+        posts: [
+            Post.build({
+                id: 1,
+                text: "nononono",
+                user_id: 1
+            }),
+            Post.build({
+                id: 2,
+                text: "nononono",
+                user_id: 1
+            }),
+        ],
     }
 
-    res.send(data)
+    res.send(content)
 }

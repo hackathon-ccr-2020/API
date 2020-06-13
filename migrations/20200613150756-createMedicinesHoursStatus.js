@@ -9,7 +9,11 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER,
 			},
-			medicinesHoursId: {
+			userId: {
+				allowNull: false,
+				type: Sequelize.INTEGER,
+			},
+			medicineId: {
 				allowNull: false,
 				type: Sequelize.INTEGER,
 			},

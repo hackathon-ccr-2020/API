@@ -20,7 +20,11 @@ module.exports = {
 			days: {
 				allowNull: false,
 				type: Sequelize.STRING,
-			}
+			},
+			points: {
+				allowNull: false,
+				type: Sequelize.INTEGER,
+			},
 		});
 	},
 	down: (queryInterface, Sequelize) => {

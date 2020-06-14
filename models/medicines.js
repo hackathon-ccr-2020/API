@@ -23,7 +23,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER,
         },
-    }, {timestamps: false, tableName: "medicines"});
+    }, {
+        timestamps: false,
+        tableName: "medicines"
+    });
 
     return Medicines;
 }

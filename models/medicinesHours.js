@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.STRING(10),
         },
-    }, {timestamps: false, tableName: "medicinesHours"});
+    }, {
+        timestamps: false,
+        tableName: "medicinesHours"
+    });
 
     return MedicinesHours;
  }

@@ -5,7 +5,7 @@ module.exports = {
         const health = Health.build({
             height: data.height,
             weight: data.weight,
-            continousMedication: data.continuousMedication,
+            continuousMedication: data.continuousMedication,
             medicalMonitoring: data.medicalMonitoring,
             psychologicalMonitoring: data.psychologicalMonitoring,
             physicalExercises: data.physicalExercises,

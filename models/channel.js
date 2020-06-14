@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.STRING,
        }
-    }, { timestamps: false, tableName: "channels" });
+    }, {
+        timestamps: false,
+        tableName: "channels"
+    });
 
     Channel.associate = function (models) {
         Channel.belongsToMany(models.User, { as: 'Users', through: { model: models.ChannelUser }, foreignKey: 'channel_id'})

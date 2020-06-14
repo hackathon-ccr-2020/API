@@ -10,6 +10,7 @@ module.exports = {
 
         return user
     },
+
     async create(data) {
         const user = User.build({
             firstName: data.firstName,
@@ -24,6 +25,7 @@ module.exports = {
 
         return user
     },
+
     async loginUser(payload) {
         const user = await User.findOne({
             where: {
@@ -35,7 +37,8 @@ module.exports = {
 
         if (comparePass)
             return user;
-        else return userNotFound;
+
+        return userNotFound;
     }
 }
 

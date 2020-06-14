@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         user_id: {
             type: DataTypes.INTEGER
        }
-    }, { timestamps: false, tableName: "channel_user" });
+    }, {
+        timestamps: false,
+        tableName: "channel_user"
+    });
 
     ChannelUser.associate = function (models) {
         ChannelUser.belongsTo(models.User, { as: 'User', foreignKey: 'user_id'})

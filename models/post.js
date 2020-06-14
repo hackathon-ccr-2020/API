@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true,
             type: DataTypes.INTEGER
        }
-    },{timestamps: false, tableName: "posts"});
+    },{
+        timestamps: false,
+        tableName: "posts"
+    });
 
     Post.associate = function (models) {
         Post.belongsTo(models.Channel, { as: 'Channel', foreignKey: 'channel_id'})

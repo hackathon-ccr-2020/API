@@ -2,25 +2,60 @@ const service = require('./../services/medicines/medicines');
 
 exports.find = async (req, res) => {
     const medicines = await service.find(req.params.userId);
-    res.send(medicines);       
+
+    data = {
+        data: {
+            medicines: medicines
+        }
+    }
+
+    res.send(data);
 }
 
 exports.findOne = async (req, res) => {
     const medicine = await service.findOne(req.params.medicineId);
-    res.send(medicine);       
+
+    data = {
+        data: {
+            medicine: medicine
+        }
+    }
+
+    res.send(data);
 }
 
 exports.create = async (req, res) => {
     const medicine = await service.create(req.body);
-    res.send(medicine);       
+
+    data = {
+        data: {
+            medicine: medicine
+        }
+    }
+
+    res.send(data);
 }
 
 exports.createHistoric = async (req, res) => {
     const medicines = await service.createHistoric(req.body);
-    res.send(medicines);       
+
+    data = {
+        data: {
+            history: medicines
+        }
+    }
+
+    res.send(data);
 }
 
 exports.findAllHistoric = async (req, res) => {
     const medicines = await service.findAllHistoric(req.params.userId);
-    res.send(medicines);       
+
+    data = {
+        data: {
+            history: medicines
+        }
+    }
+
+    res.send(data);
 }

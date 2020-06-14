@@ -14,5 +14,12 @@ exports.createUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
     const user = await userService.loginUser(req.body);
-    res.send(user);
+
+    data = {
+        data: {
+            user: user
+        }
+    }
+
+    res.send(data);
 }
